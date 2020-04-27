@@ -3,3 +3,8 @@ steps:
     name: 'gcr.io/cloud-builders/go'
     args: ['install', 'sum']
     env: ['GOPATH=.']
+
+  - id: 'Executando Testes...'
+    name: 'gcr.io/cloud-builders/go'
+    args: ['test', '-v','./...']
+    env: ['GOPATH=.']
