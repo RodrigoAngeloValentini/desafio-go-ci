@@ -8,3 +8,9 @@ steps:
     name: 'gcr.io/cloud-builders/go'
     args: ['test', '-v','./...']
     env: ['GOPATH=.']
+
+  - id: 'Criando Build da Imagem...'
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '--tag=gcr.io/$PROJECT_ID/go-ci', '.']
+
+images: ['gcr.io/$PROJECT_ID/go-ci']
